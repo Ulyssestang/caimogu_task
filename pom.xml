@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.shy526</groupId>
+  <groupId>com.githubInfo.shy526</groupId>
   <artifactId>caimogu_task</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
@@ -110,7 +110,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.github.shy526.App</mainClass>
+              <mainClass>com.githubInfo.shy526.App</mainClass>
               <classpathPrefix>lib/</classpathPrefix>
             </manifest>
           </archive>
@@ -127,7 +127,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>com.github.shy526.App</mainClass>
+              <mainClass>com.githubInfo.shy526.App</mainClass>
             </manifest>
           </archive>
         </configuration>

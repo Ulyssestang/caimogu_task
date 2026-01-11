@@ -5,8 +5,10 @@
 
 2. 配置三个仓库参数
    - `OWNER_REPO` 用户名/仓库名
-   - `CAI_MO_GU_TOKEN` 踩蘑菇的Token cmg_token
+   - ~~`CAI_MO_GU_TOKEN`~~ 踩蘑菇的Token cmg_token
    - `MY_GITHUB_API_TOKEN` githubapiToken 需要读写权限
+   - `CMG_NAME` 踩蘑菇帐号名
+   - `CMG_PASSWORD` 踩蘑菇密码
 
 3. 删除文件
    - run.txt     (记录上一次运行时间)
@@ -21,6 +23,10 @@
   - cmgToken问题修复(10-12号之间fork的需要重新修改)
   - 个人主页问题修复
   - 触发器恢复
+- 2026-01-11
+  - 基于h5接口的自动登录
+  - 添加调用h5接口的代码
+  - 最后一次更新
 
 ## 踩蘑菇接口(以下是该项目用到的所有接口和html)
 

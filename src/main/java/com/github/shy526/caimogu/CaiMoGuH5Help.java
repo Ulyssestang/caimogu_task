@@ -204,9 +204,8 @@ public class CaiMoGuH5Help {
         return -1;
     }
 
-    public static void getRuleDetail(Set<String> detailIds) {
+    public static int getRuleDetail(Set<String> detailIds) {
         List<String> circleIds = Arrays.asList("449", "329", "369", "383", "282", "466");
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         int acCommentNum = 0;
         int acCommentMax = 3;
@@ -233,6 +232,7 @@ public class CaiMoGuH5Help {
                     }
                     if (acComment(detaildId, acComment)) {
                         log.error("评论成功:{}-{}", circleId, detaildId);
+                        detailIds.add(detaildId);
                         acCommentNum++;
                     } else {
                         log.error("评论失败:{}-{}", circleId, detaildId);
@@ -240,7 +240,7 @@ public class CaiMoGuH5Help {
                 }
             } while (pageSize > 0 && page < pageMax && acCommentNum < acCommentMax);
         }
-
+        return acCommentNum;
     }
 
     private static String findRuleComment(String detaildId) {
@@ -384,7 +384,7 @@ public class CaiMoGuH5Help {
     /**
      * 获取所有已回复的帖子和游戏Id
      *
-     * @return type=1 帖子Id type=2 游戏Id
+     * @return type=1 帖子Id type=2 游戏Id 3 评论过游戏库中的评论
      */
     public static Map<String, Set<String>> getReplyGroup() {
         String nextKey = "";
