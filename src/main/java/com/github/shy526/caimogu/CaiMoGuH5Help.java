@@ -238,7 +238,7 @@ public class CaiMoGuH5Help {
     }
 
     public static int getRuleDetail(Set<String> detailIds) {
-        List<String> circleIds = Arrays.asList("449", "329", "369", "383", "282", "466");
+        List<String> circleIds = Arrays.asList("449", "329", "369", "383", "282", "466","2298712");
         LocalDateTime now = LocalDateTime.now();
         int acCommentNum = 0;
         int acCommentMax = Config.INSTANCE.userInfo.getMaxComment();
@@ -256,7 +256,7 @@ public class CaiMoGuH5Help {
                     LocalDateTime createTime = detail.getLocalDateTime("createTime");
                     long between = ChronoUnit.DAYS.between(createTime, now);
                     int replyNumber = detail.getIntValue("replyNumber");
-                    if (detailIds.contains(detaildId) || between > 20 || replyNumber <= 10) {
+                    if (detailIds.contains(detaildId) || between > 5 || replyNumber <= 5) {
                         continue;
                     }
                     String acComment = findRuleComment(detaildId);
@@ -686,13 +686,13 @@ public class CaiMoGuH5Help {
         String timeStr = params.get("time");
         boolean flag = false;
         for (String key : params.keySet()) {
-            if (!flag) {
-                urlBuild.append("?");
-                flag = true;
-            } else {
-                urlBuild.append("&");
-            }
             if (selectKey.contains(key)) {
+                if (!flag) {
+                    urlBuild.append("?");
+                    flag = true;
+                } else {
+                    urlBuild.append("&");
+                }
                 String temp = params.get(key);
                 if (!key.equals("time") && !key.equals("sign")) {
 
